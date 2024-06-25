@@ -1,0 +1,64 @@
+body {
+    background-image: url("../assets/colours.jpg");
+    background-size: cover;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    font-family: "Poppins";
+    margin-top: 30px;
+    margin-bottom: 50px;
+    color: aliceblue;
+}
+
+.introduction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-left: 2%;
+    margin-right: 5%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    margin-right: 2%;
+    margin-top: 6px;
+}
+
+.introduction img {
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+iframe {
+    width: 300px;
+    height: 175px;
+    margin-bottom: 50px;
+}
+
+#synopsis {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#status {
+    margin-bottom: 10px;
+}
+
+#episodes {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#score {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#studio {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}

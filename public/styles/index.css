@@ -1,0 +1,43 @@
+html, body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    text-align: center;
+    background-image: url("../assets/colours.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+h1 {
+    font-family: "Poppins";
+    color: aliceblue;
+    font-size: 3.5rem;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#inputText {
+    font-family: "Poppins";
+    border: 0;
+    padding: 3px 6px;
+}
+
+#submit {
+    font-family: "Poppins";
+    padding: 3px 6px;
+    margin-left: 10px;
+    border: 0;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#submit:hover {
+    color: aliceblue;
+    background-color: #c30d62;
+    transform: translateY(-2px);
+}
