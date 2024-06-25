@@ -5,45 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/animeDetails.css">
     <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/footer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <title>AnimeVault</title>
 </head>
 <body>
-
-    <%- include('partials/navbar.ejs') %>
     
     <% if (!locals.error) { %>
-        <div class="main">
-            <div class="introduction">
-                <% if (details.name_english) { %>
-                    <h1><%= details.name_english %></h1>
-                <% } else { %>
-                    <h1><%= details.name %></h1>
-                <% } %>
-                <img src="<%= details.image %>" alt="Anime image">
-                <% if (details.trailerID) { %>
-                    <iframe 
-                        src="https://www.youtube.com/embed/<%= details.trailerID %>" 
-                        frameborder="0" 
-                        allow="encrypted-media" 
-                        allowfullscreen>
-                    </iframe>
-                <% } %>
+        <div class="wrapper">
+            <%- include('partials/navbar.ejs') %>
+            
+            <div class="main">
+                <div class="introduction">
+                    <% if (details.name_english) { %>
+                        <h1><%= details.name_english %></h1>
+                    <% } else { %>
+                        <h1><%= details.name %></h1>
+                    <% } %>
+                    <img src="<%= details.image %>" alt="Anime image">
+                    <% if (details.trailerID) { %>
+                        <iframe 
+                            src="https://www.youtube.com/embed/<%= details.trailerID %>" 
+                            frameborder="0" 
+                            allow="encrypted-media" 
+                            allowfullscreen>
+                        </iframe>
+                    <% } %>
+                </div>
+                <div class="content">
+                    <h2>Synopsis:</h2>
+                    <p  id="synopsis"><%= details.synopsis %></p>
+                    <h2 id="status">Status: </h2>
+                    <p><%= details.status %></p>
+                    <h2 id="episodes">Episodes: </h2> 
+                    <p><%= details.episodes %></p>
+                    <h2 id="score">Score:</h2>
+                    <p><%= details.score %></p>
+                    <h2 id="studio">Studio:</h2>
+                    <p><%= details.studio %></p>
+                </div>
             </div>
-            <div class="content">
-                <h2>Synopsis:</h2>
-                <p  id="synopsis"><%= details.synopsis %></p>
-                <h2 id="status">Status: </h2>
-                <p><%= details.status %></p>
-                <h2 id="episodes">Episodes: </h2> 
-                <p><%= details.episodes %></p>
-                <h2 id="score">Score:</h2>
-                <p><%= details.score %></p>
-                <h2 id="studio">Studio:</h2>
-                <p><%= details.studio %></p>
-            </div>
+
+            <%- include('partials/footer.ejs') %>
         </div>
     <% } else { %>
         <h1><%= error %></h1>
