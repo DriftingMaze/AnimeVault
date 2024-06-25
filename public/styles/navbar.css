@@ -42,3 +42,19 @@ body {
     background-color: #c30d62;
     transform: translateY(-2px);
 }
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: row; 
+        justify-content: space-between; 
+        padding: 15px 5px; 
+    }
+
+    .navbar p {
+        margin-left: 5px;  
+    } 
+
+    .navbar a {
+        margin-top: 0;
+    }
+}
