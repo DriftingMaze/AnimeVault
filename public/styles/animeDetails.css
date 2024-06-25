@@ -1,6 +1,9 @@
 body {
     background-image: url("../assets/colours.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .wrapper {
@@ -24,14 +27,14 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-left: 2%;
+    margin-left: 5%;
     margin-right: 5%;
 }
 
 .content {
     display: flex;
     flex-direction: column;
-    margin-right: 2%;
+    margin-right: 5%;
     margin-top: 6px;
 }
 
