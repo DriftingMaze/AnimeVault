@@ -47,7 +47,8 @@ app.get("/:heading", async (req,res) => {
             status: anime.status,
             episodes: anime.episodes,
             score: anime.score,
-            studio: anime.studios[0].name
+            studio: anime.studios[0].name,
+            genres: anime.genres.map(genre => genre.name)
         }
         res.render("animeDetails.ejs", {details: animeDetails, error: null});
     } catch (error) {

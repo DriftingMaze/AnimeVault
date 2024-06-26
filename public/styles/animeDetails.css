@@ -52,7 +52,7 @@ iframe {
     margin-bottom: 10px;
 }
 
-#status, #episodes, #score, #studio {
+#genres, #status, #episodes, #score, #studio {
     margin-top: 20px;
     margin-bottom: 10px;
 }
@@ -77,6 +77,7 @@ iframe {
         margin-top: 10%;
         margin-right: 10%; 
         margin-left: 10%;
+        margin-bottom: 20%;
     }
 
     iframe {
@@ -88,7 +89,7 @@ iframe {
         margin-top: 20px;
     }
 
-    #synopsis, #status, #episodes, #score, #studio {
+    #genres, #synopsis, #status, #episodes, #score, #studio {
         margin-top: 15px; 
         margin-bottom: 15px; 
     }
