@@ -12,16 +12,35 @@
     <title>AnimeVault</title>
 </head>
 <body>
-    <div class="wrapper">
-        <%- include('partials/navbar.ejs') %>
-        
-        <div class="main">
-            <h1>Anime Finder</h1>
-            <form action="/" method="POST">
-                <input type="text" name="requestedAnime" placeholder="Type here..." id="inputText">
-                <input type="submit" value="Search" id="submit">
-            </form>
-        </div>
+    <% if (!locals.error) { %>
+        <div class="wrapper">
+            <%- include('partials/navbar.ejs') %>
+            
+            <div class="main">
+                <h1>Anime Finder</h1>
+                <form action="/" method="POST">
+                    <input type="text" name="requestedAnime" placeholder="Type here..." id="inputText">
+                    <input type="submit" value="Search" id="submit">
+                </form>
+            </div>
+            <div class="carousel-container">
+                <h1>Top Animes</h1>
+                <div class="carousel">
+                    <% animes.forEach(anime => { %>
+                        <div class="carousel-item">
+                            <a href="/<%= anime.name %>">
+                                <img src="<%= anime.image %>" alt="Anime image">
+                                <div class="carousel-caption">
+                                    <%= anime.name %>
+                                </div>
+                            </a>
+                        </div>
+                    <% }) %>
+                </div>
+            </div>
+    <% } else { %>
+        <span id="error"><%= error %></span>
+    <% } %>
 
         <%- include('partials/footer.ejs') %>
     </div>

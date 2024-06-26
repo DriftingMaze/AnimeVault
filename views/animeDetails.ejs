@@ -19,11 +19,7 @@
             
             <div class="main">
                 <div class="introduction">
-                    <% if (details.name_english) { %>
-                        <h1><%= details.name_english %></h1>
-                    <% } else { %>
-                        <h1><%= details.name %></h1>
-                    <% } %>
+                    <h1><%= details.name %></h1>
                     <img src="<%= details.image %>" alt="Anime image">
                     <% if (details.trailerID) { %>
                         <iframe 
@@ -51,7 +47,7 @@
             <%- include('partials/footer.ejs') %>
         </div>
     <% } else { %>
-        <h1><%= error %></h1>
+        <span id="error"><%= error %></span>
     <% } %>
 
 </body>

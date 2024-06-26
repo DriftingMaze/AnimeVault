@@ -12,8 +12,17 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.set("view engine", "ejs");
 
-app.get("/", (req,res) => {
-    res.render("index.ejs");
+app.get("/", async (req, res) => {
+    try {
+        let result = await axios.get(API_URL + `/top/anime`);
+        const animes = result.data.data.map(anime => ({
+            name: anime.title_english ? anime.title_english : anime.title,
+            image: anime.images.jpg.image_url
+        }));
+        res.render("index.ejs", {animes: animes, error: null});
+    } catch (error) {
+        res.render("index.ejs", {animes: null, error: error.message });
+    }
 });
 
 app.post("/", (req,res) => {
@@ -31,8 +40,7 @@ app.get("/:heading", async (req,res) => {
         });
         const anime = result.data.data[0];
         const animeDetails = {
-            name: anime.title, 
-            name_english: anime.title_english,
+            name: anime.title_english ? anime.title_english : anime.title,
             image: anime.images.jpg.image_url,
             trailerID: anime.trailer.youtube_id,
             synopsis: anime.synopsis.replace("[Written by MAL Rewrite]", ""),
