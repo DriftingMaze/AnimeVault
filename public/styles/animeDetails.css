@@ -1,15 +1,12 @@
-body {
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     background-image: url("../assets/colours.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-}
-
-.wrapper {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
 
 .main {
@@ -57,11 +54,6 @@ iframe {
     margin-bottom: 10px;
 }
 
-#error {
-    background: none;
-    text-align: center;
-}
-
 @media (max-width: 768px) {
     .main {
         flex-direction: column; 
@@ -93,4 +85,21 @@ iframe {
         margin-top: 15px; 
         margin-bottom: 15px; 
     }
+}
+
+.error-mode {
+    display: flex;
+    flex-direction: column;
+    font-family: "Poppins";
+    text-align: center;
+}
+
+#errorMessage {
+    margin-top: 3%;
+    font-size: 1.5rem;
+}
+
+#errorStatus {
+    margin-top: 10%;
+    font-size: 5rem;
 }

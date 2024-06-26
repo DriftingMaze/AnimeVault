@@ -4,19 +4,16 @@ html, body {
     margin: 0;
 }
 
-body {
+.wrapper {
     text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     background-image: url("../assets/colours.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-}
-
-.wrapper {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
 
 .main {
@@ -140,11 +137,6 @@ h1 {
     display: block;
 }
 
-#error {
-    background: none;
-    text-align: center;
-}
-
 @media (max-width: 768px) {
     #inputText {
         width: 70%; 
@@ -161,4 +153,21 @@ h1 {
     .carousel-container {
         margin-bottom: 10rem;
     }
+}
+
+.error-mode {
+    display: flex;
+    flex-direction: column;
+    font-family: "Poppins";
+    text-align: center;
+}
+
+#errorMessage {
+    margin-top: 3%;
+    font-size: 1.5rem;
+}
+
+#errorStatus {
+    margin-top: 10%;
+    font-size: 5rem;
 }

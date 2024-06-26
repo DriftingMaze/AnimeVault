@@ -21,7 +21,13 @@ app.get("/", async (req, res) => {
         }));
         res.render("index.ejs", {animes: animes, error: null});
     } catch (error) {
-        res.render("index.ejs", {animes: null, error: error.message });
+        let errorData = {
+            errorMessage: error.message
+        };
+        if (error.response && error.response.status) {
+            errorData.errorStatus = error.response.status;
+        }
+        res.render("index.ejs", { animes: null, error: errorData });
     }
 });
 
@@ -52,8 +58,13 @@ app.get("/:heading", async (req,res) => {
         }
         res.render("animeDetails.ejs", {details: animeDetails, error: null});
     } catch (error) {
-        console.log(error.message);
-        res.render("animeDetails.ejs", {details: null, error: error.message});
+        let errorData = {
+            errorMessage: error.message
+        };
+        if (error.response && error.response.status) {
+            errorData.errorStatus = error.response.status;
+        }
+        res.render("animeDetails.ejs", { details: null, error: errorData });
     }
 });
 
